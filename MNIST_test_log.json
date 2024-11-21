@@ -1,0 +1,14 @@
+{
+    "CNN_MLP": 0.9884,
+    "CNN_ReLUKAN_grow": 0.9821,
+    "CNN_ReLUKAN_nogrow": 0.9783,
+    "CNN_MLP_grow": 0.9878,
+    "CNN_MLP_nogrow": 0.9873,
+    "CNN_ReLUKAN": 0.9901,
+    "CNN_SiLUKAN": 0.9897,
+    "DenseMLP": 0.9667,
+    "DenseReLUKAN": 0.955,
+    "ReLUKAN_Conv_MLP": 0.9845,
+    "ReLUKAN_Conv_ReLUKAN": 0.9841,
+    "ViT": 0.9761
+}
