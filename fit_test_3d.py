@@ -26,8 +26,8 @@ class MLP(nn.Module):
         return self.model(x)
 
 
-
 if __name__ == '__main__':
+    i = 0
     model = MLP(2,[256,256],1)
     model_kan = ReLUKAN([2, 8, 1], 5, 3)
     #x = torch.Tensor([np.arange(4, 1024) / 1024]).T
@@ -75,14 +75,16 @@ if __name__ == '__main__':
 
         plt.clf()
         ax = fig.add_subplot(111, projection='3d')
-        ax.scatter(x.cpu()[:, 0], x.cpu()[:, 1], y.cpu(), label='True Function', color='b', s=1)
-        ax.scatter(x.cpu()[:, 0], x.cpu()[:, 1], pred.cpu(), label='Predicted MLP', color='r', s=1)
-        ax.scatter(x.cpu()[:, 0], x.cpu()[:, 1], pred_kan.cpu(), label='Predicted KAN', color='g', s=1)
+        ax.scatter(x.cpu()[:, 0], x.cpu()[:, 1], y.cpu(), label='True Function', color='b', s=1, alpha=0.5)
+        ax.scatter(x.cpu()[:, 0], x.cpu()[:, 1], pred.cpu(), label='Predicted MLP', color='r', s=0.1, alpha=0.5)
+        ax.scatter(x.cpu()[:, 0], x.cpu()[:, 1], pred_kan.cpu(), label='Predicted KAN', color='g', s=0.1, alpha=0.5)
 
         ax.set_xlabel('X1')
         ax.set_ylabel('X2')
         ax.set_zlabel('Y')
         ax.legend()
+        ax.view_init(elev=30., azim=i)
+        i += 1
         
         plt.pause(0.001)
         print(loss, loss_kan)
